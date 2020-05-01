@@ -3,7 +3,7 @@ using NUnit.Framework;
 namespace Persistence.Tests
 {
     [TestFixture]
-    public class PersistentVariableTests
+    public class VariableTests
     {
         private IStorage _storage;
         private IVariable<int> _variable;

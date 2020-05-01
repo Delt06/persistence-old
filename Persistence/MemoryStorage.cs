@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 
 namespace Persistence
 {
@@ -66,6 +67,34 @@ namespace Persistence
 
         /// <inheritdoc />
         public void Flush() { }
+
+        [NotNull]
+        public Dictionary<string, object> ToDictionary()
+        {
+            var dictionary = new Dictionary<string, object>();
+
+            foreach (var pair in _integers)
+            {
+                dictionary[pair.Key] = pair.Value;
+            }
+            
+            foreach (var pair in _booleans)
+            {
+                dictionary[pair.Key] = pair.Value;
+            }
+            
+            foreach (var pair in _floats)
+            {
+                dictionary[pair.Key] = pair.Value;
+            }
+            
+            foreach (var pair in _strings)
+            {
+                dictionary[pair.Key] = pair.Value;
+            }
+
+            return dictionary;
+        }
 
         private readonly IDictionary<string, int> _integers = new Dictionary<string, int>();
         private readonly IDictionary<string, bool> _booleans = new Dictionary<string, bool>();
