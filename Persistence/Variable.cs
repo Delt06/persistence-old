@@ -1,12 +1,11 @@
 using System;
-using JetBrains.Annotations;
 
 namespace Persistence
 {
     public abstract class Variable<T> : IVariable<T> where T : IEquatable<T>
     {
-        [NotNull] public string Name { get; }
-        [CanBeNull] public T DefaultValue { get; }
+        public string Name { get; }
+        public T DefaultValue { get; }
 
         public T Get(IReadOnlyStorage storage)
         {
@@ -19,7 +18,7 @@ namespace Persistence
             return _value;
         }
 
-        protected abstract T ReadValueFrom([NotNull] IReadOnlyStorage storage);
+        protected abstract T ReadValueFrom(IReadOnlyStorage storage);
 
         public void Set(IStorage storage, T value)
         {
@@ -41,7 +40,7 @@ namespace Persistence
             _value = default;
         }
 
-        protected Variable([NotNull] string name, T defaultValue = default)
+        protected Variable(string name, T defaultValue = default)
         {
             Name = name ?? throw new ArgumentNullException(nameof(name));
             DefaultValue = defaultValue;

@@ -1,11 +1,9 @@
-using JetBrains.Annotations;
-
 namespace Persistence
 {
     /// <inheritdoc />
     public sealed class FloatVariable : Variable<float>
     {
-        public FloatVariable([NotNull] string name, float defaultValue = default) : base(name, defaultValue)
+        public FloatVariable(string name, float defaultValue = default) : base(name, defaultValue)
         {
         }
 

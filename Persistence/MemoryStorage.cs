@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using JetBrains.Annotations;
 
 namespace Persistence
 {
@@ -68,7 +67,6 @@ namespace Persistence
         /// <inheritdoc />
         public void Flush() { }
 
-        [NotNull]
         public Dictionary<string, object> ToDictionary()
         {
             var dictionary = new Dictionary<string, object>();

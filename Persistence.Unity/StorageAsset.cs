@@ -5,7 +5,7 @@ namespace Persistence.Unity
     /// <summary>
     /// SciptableObject storage.
     /// </summary>
-    public abstract class Storage : ScriptableObject, IStorage
+    public abstract class StorageAsset : ScriptableObject, IStorage
     {
         public abstract void SetInt(string key, int value);
         public abstract void SetFloat(string key, float value);

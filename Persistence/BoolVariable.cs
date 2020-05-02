@@ -1,11 +1,9 @@
-using JetBrains.Annotations;
-
 namespace Persistence
 {
     /// <inheritdoc />
     public sealed class BoolVariable : Variable<bool>
     {
-        public BoolVariable([NotNull] string name, bool defaultValue = default) : base(name, defaultValue)
+        public BoolVariable(string name, bool defaultValue = default) : base(name, defaultValue)
         {
         }
 

@@ -1,5 +1,4 @@
 using System;
-using JetBrains.Annotations;
 
 namespace Persistence
 {
@@ -24,14 +23,14 @@ namespace Persistence
         /// </summary>
         /// <param name="storage">Storage to read from.</param>
         /// <returns>Stored value. If nothing is stored, <c>DefaultValue</c></returns>
-        T Get([NotNull] IReadOnlyStorage storage);
+        T Get(IReadOnlyStorage storage);
         
         /// <summary>
         /// Write value to the specified storage.
         /// </summary>
         /// <param name="storage">Storage to write to.</param>
         /// <param name="value">Value to write.</param>
-        void Set([NotNull] IStorage storage, T value);
+        void Set(IStorage storage, T value);
         
         /// <summary>
         /// Clear cached value.

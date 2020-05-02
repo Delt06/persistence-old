@@ -1,11 +1,9 @@
-using JetBrains.Annotations;
-
 namespace Persistence
 {
     /// <inheritdoc />
     public sealed class StringVariable : Variable<string>
     {
-        public StringVariable([NotNull] string name, string defaultValue = default) : base(name, defaultValue)
+        public StringVariable(string name, string defaultValue = default) : base(name, defaultValue)
         {
         }
 

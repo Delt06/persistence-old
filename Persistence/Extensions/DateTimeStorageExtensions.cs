@@ -1,12 +1,11 @@
 using System;
 using System.Globalization;
-using JetBrains.Annotations;
 
 namespace Persistence.Extensions
 {
     public static class DateTimeStorageExtensions
     {
-        public static void SetDateTime([NotNull] this IStorage storage, [NotNull] string key, DateTime value)
+        public static void SetDateTime(this IStorage storage, string key, DateTime value)
         {
             if (storage == null) throw new ArgumentNullException(nameof(storage));
             if (key == null) throw new ArgumentNullException(nameof(key));
@@ -15,7 +14,7 @@ namespace Persistence.Extensions
             storage.SetString(key, dateTimeAsString);
         }
 
-        public static DateTime GetDateTime([NotNull] this IReadOnlyStorage storage, [NotNull] string key, DateTime defaultValue = default)
+        public static DateTime GetDateTime(this IReadOnlyStorage storage, string key, DateTime defaultValue = default)
         {
             if (storage == null) throw new ArgumentNullException(nameof(storage));
             if (key == null) throw new ArgumentNullException(nameof(key));
@@ -28,7 +27,6 @@ namespace Persistence.Extensions
                 : defaultValue;
         }
         
-        [NotNull]
         private static readonly IFormatProvider DefaultFormatProvider = CultureInfo.InvariantCulture; 
     }
 }
