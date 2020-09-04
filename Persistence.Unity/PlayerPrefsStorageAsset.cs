@@ -2,10 +2,6 @@ using UnityEngine;
 
 namespace Persistence.Unity
 {
-    
-    [CreateAssetMenu(menuName = "Storage/Player Prefs")]
-    public sealed class PlayerPrefsStorageAsset : HumbleStorageAsset<PlayerPrefsStorage>
-    {
-        
-    }
+	[CreateAssetMenu(menuName = "Storage/Player Prefs")]
+	public sealed class PlayerPrefsStorageAsset : HumbleStorageAsset<PlayerPrefsStorage> { }
 }
